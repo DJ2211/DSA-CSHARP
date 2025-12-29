@@ -1,0 +1,138 @@
+using System; // using system namespace
+using System.Collections.Generic; // assembly reference for queue
+
+public enum orderTraversal {
+            InOrder = 2,
+            PreOrder = 1,
+            PostOrder = 3
+    }
+    
+public class Solution { // class
+    
+    public static void Main() { // main method 
+        
+        TreeNode node = new TreeNode(10);
+        node.left = new TreeNode(5);
+        node.right = new TreeNode(7);
+        node.left.left = new TreeNode(3);
+        node.left.right = new TreeNode(1);
+        node.right.left = new TreeNode(4);
+        node.right.right= new TreeNode(2);
+        
+        orderTraversal orderTraversal = new orderTraversal();// declaring enum
+        
+        // l1       10
+        // l2     5     7
+        // l3   3  1  4   2
+        
+        // BFS
+        // what is BFS? 
+        
+        // traversing tree in levels
+        
+        // so if we traverse this tree in levels the iterationwill be like 
+        
+        // l1 then l2 then l3
+        // 10,    5,7,    3,1,4,2
+        node.BFS(node);
+        
+        // DFS
+        // what is DFS ?
+        // iteration per depth 
+        // but in depth we can have multiple ways of iterations 
+        
+        // preorder traversal  -> root, left, right
+        // inorder traversal -> left, root, right
+        // postorder traversal -> left, right, root
+        
+        // below is the example of preorder traversal
+        // 10, 5, 3, 1, 7, 4, 2
+        node.DFS(node, orderTraversal.PreOrder); // preorder traversal
+        
+        // below is the example of inorder traversal
+        // 3,5,1,10,4,7,2
+        node.DFS(node, orderTraversal.InOrder); // inorder traversal
+        
+        // below is the example of postorder traversal
+        // 3,1,5,4,2,7,10
+        node.DFS(node, orderTraversal.PostOrder); // postorder traversal
+    
+    }
+}
+
+// binary tree class 
+public class TreeNode {
+    public int val;
+    public TreeNode left;
+    public TreeNode right;
+    
+    // constructor called
+    public TreeNode(int val = 0, TreeNode left = null, TreeNode right = null) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
+    
+    // BFS Implementation
+    public void BFS(TreeNode root) {
+        // which data structure is efficient to traverse in levels?
+        // it like we have to do first in first out
+        // 10 in 10 out level one complete
+        // 5,7 in 5,7 out level two complete
+        // so on
+        // queue is best as it is FIFO mechanism
+        
+        Queue<TreeNode> queue = new Queue<TreeNode>();
+        queue.Enqueue(root); // adding the element in the queue
+        
+        while(queue.Count > 0) {
+            
+            int level = queue.Count;
+            while(level > 0) {
+                TreeNode node = queue.Dequeue();
+                Console.Write(node.val + " ");
+                if(node.left != null ) queue.Enqueue(node.left);
+                if(node.right != null) queue.Enqueue(node.right);
+                level--;
+            }
+        }
+        Console.WriteLine();
+        
+    }
+    
+    // DFS Implementation
+    public void DFS(TreeNode node, orderTraversal type) {
+        if(type == orderTraversal.PreOrder) {
+            PreOrderTraversal(node);
+            Console.WriteLine();
+        }else if(type == orderTraversal.InOrder) {
+            InOrderTraversal(node);
+            Console.WriteLine();
+        }else {
+            PostOrderTraversal(node);
+        }
+    }
+    
+    public void PreOrderTraversal(TreeNode node) {
+        if(node == null) return;
+        
+        Console.Write(node.val + " ");
+        PreOrderTraversal(node.left);
+        PreOrderTraversal(node.right);
+    }
+    
+    public void InOrderTraversal(TreeNode node) {
+        if(node == null) return;
+        
+        InOrderTraversal(node.left);
+        Console.Write(node.val + " ");
+        InOrderTraversal(node.right);
+    }
+    
+    public void PostOrderTraversal(TreeNode node) {
+        if(node == null) return;
+        PostOrderTraversal(node.left);
+        PostOrderTraversal(node.right);
+        Console.Write(node.val + " ");
+    }
+}
