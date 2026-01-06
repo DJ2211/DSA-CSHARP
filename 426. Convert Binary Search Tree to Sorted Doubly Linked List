@@ -1,0 +1,111 @@
+using System;
+
+// create a binary search tree
+// convert it into doubly linked list
+
+// helper class to create nodes in bst & dll
+public class TreeNode {
+    public int val;
+    public TreeNode left;
+    public TreeNode right;
+    
+    // constructor
+    public TreeNode(int val) {
+        this.val = val;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+public class BinarySearchTree {
+    public TreeNode root;
+    
+    public BinarySearchTree() {
+        this.root = null;
+    }
+    
+    public TreeNode Add(int value) {
+        root = InvertAdd(root, value);
+        return root;
+    }
+    
+    public TreeNode InvertAdd(TreeNode node, int value) {
+        if(node == null) {
+            return new TreeNode(value);
+        }
+        
+        if(value < node.val) {
+            node.left = InvertAdd(node.left, value);
+        } else if(value > node.val) {
+            node.right = InvertAdd(node.right, value);
+        }
+        return node;
+    }
+}
+
+public class Solution {
+    public static void Main() {
+        BinarySearchTree bst = new BinarySearchTree();
+        bst.Add(1);
+        bst.Add(2);
+        bst.Add(3);
+        bst.Add(4);
+        TreeNode root = bst.Add(5);
+        
+        TreeToDoubly s = new TreeToDoubly();
+        TreeNode flatten = s.TreeToDoublyLinkedList(root);
+        
+        TreeNode curr = flatten;
+        
+        while(curr.right != flatten) {
+            Console.Write(curr.val + " ");
+            curr = curr.right;
+        }
+        Console.Write(curr.val);
+    }
+}
+
+public class TreeToDoubly {
+    private TreeNode first;
+    private TreeNode last;
+    public TreeNode TreeToDoublyLinkedList(TreeNode root) {
+        if(root == null) return null;
+        
+        // method for InOrder Traversal
+        InOrder(root);
+        
+        last.right = first;
+        first.left = last;
+        
+        return first;
+    }
+    
+    public void InOrder(TreeNode node) {
+        if(node == null) return;
+        
+        // go to left most to get the starting 
+        InOrder(node.left);
+        
+        if(last != null) {
+            last.right = node;
+            node.left = last;
+        } else {
+            // if last is null then this is the first node
+            first = node;
+        }
+        last = node;
+        
+        InOrder(node.right); // now go to right
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
