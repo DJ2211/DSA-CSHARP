@@ -1,0 +1,15 @@
+C:\Users\Admin\Desktop\DSAC#\DSA-CSHARP\Competitive_Programming\MinRangeProject\bin\Debug\net9.0\MinRangeProject.exe
+C:\Users\Admin\Desktop\DSAC#\DSA-CSHARP\Competitive_Programming\MinRangeProject\bin\Debug\net9.0\MinRangeProject.deps.json
+C:\Users\Admin\Desktop\DSAC#\DSA-CSHARP\Competitive_Programming\MinRangeProject\bin\Debug\net9.0\MinRangeProject.runtimeconfig.json
+C:\Users\Admin\Desktop\DSAC#\DSA-CSHARP\Competitive_Programming\MinRangeProject\bin\Debug\net9.0\MinRangeProject.dll
+C:\Users\Admin\Desktop\DSAC#\DSA-CSHARP\Competitive_Programming\MinRangeProject\bin\Debug\net9.0\MinRangeProject.pdb
+C:\Users\Admin\Desktop\DSAC#\DSA-CSHARP\Competitive_Programming\MinRangeProject\obj\Debug\net9.0\MinRangeProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\DSAC#\DSA-CSHARP\Competitive_Programming\MinRangeProject\obj\Debug\net9.0\MinRangeProject.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\DSAC#\DSA-CSHARP\Competitive_Programming\MinRangeProject\obj\Debug\net9.0\MinRangeProject.AssemblyInfo.cs
+C:\Users\Admin\Desktop\DSAC#\DSA-CSHARP\Competitive_Programming\MinRangeProject\obj\Debug\net9.0\MinRangeProject.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\DSAC#\DSA-CSHARP\Competitive_Programming\MinRangeProject\obj\Debug\net9.0\MinRangeProject.sourcelink.json
+C:\Users\Admin\Desktop\DSAC#\DSA-CSHARP\Competitive_Programming\MinRangeProject\obj\Debug\net9.0\MinRangeProject.dll
+C:\Users\Admin\Desktop\DSAC#\DSA-CSHARP\Competitive_Programming\MinRangeProject\obj\Debug\net9.0\refint\MinRangeProject.dll
+C:\Users\Admin\Desktop\DSAC#\DSA-CSHARP\Competitive_Programming\MinRangeProject\obj\Debug\net9.0\MinRangeProject.pdb
+C:\Users\Admin\Desktop\DSAC#\DSA-CSHARP\Competitive_Programming\MinRangeProject\obj\Debug\net9.0\MinRangeProject.genruntimeconfig.cache
+C:\Users\Admin\Desktop\DSAC#\DSA-CSHARP\Competitive_Programming\MinRangeProject\obj\Debug\net9.0\ref\MinRangeProject.dll

@@ -1,0 +1,2 @@
+Minimum Difference 4
+Selected Set: 24, 20, 22
